@@ -1,5 +1,5 @@
 <template>
-  <div class="tweet-item" @click="favouriteTweet(tweet.id)">
+  <div class="tweet-item">
     <div class="user-profile__tweet">
       <div class="tweet-item__user">@{{ username }}</div>
       <div class="tweet-item__content">
@@ -22,15 +22,10 @@ export default {
       required: true,
     },
   },
-  methods: {
-    favouriteTweet(id) {
-      this.$emit("favourite", id);
-    },
-  },
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .tweet-item {
   padding: 20px;
   background-color: #fff;
@@ -39,13 +34,13 @@ export default {
   box-sizing: border-box;
   cursor: pointer;
   transition: all 0.25s ease;
-}
 
-.tweet-item:hover {
-  transform: scale(1.1, 1.1);
-}
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
 
-.tweet-item_user {
-  font-weight: bold;
+  .tweet-item_user {
+    font-weight: bold;
+  }
 }
 </style>
